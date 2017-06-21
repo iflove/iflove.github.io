@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
+<meta name="description" content="前言人生苦多，快来 Kotlin ，十分钟快速学习Kotlin！">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta property="og:url" content="http://lazy.github.io/2017/04/17/Edit-CheckBox/index.html">
+<meta property="og:title" content="Kotlin 快速入门">
+<meta property="og:url" content="http://lazy.github.io/2017/06/13/Kotlin-quick-start/index.html">
 <meta property="og:site_name" content="Lazy Notes">
-<meta property="og:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
-<meta property="og:updated_time" content="2017-06-21T10:15:44.000Z">
+<meta property="og:description" content="前言人生苦多，快来 Kotlin ，十分钟快速学习Kotlin！">
+<meta property="og:updated_time" content="2017-06-21T10:19:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta name="twitter:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
+<meta name="twitter:title" content="Kotlin 快速入门">
+<meta name="twitter:description" content="前言人生苦多，快来 Kotlin ，十分钟快速学习Kotlin！">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/"/>
+  <link rel="canonical" href="http://lazy.github.io/2017/06/13/Kotlin-quick-start/"/>
 
 
 
 
 
-  <title> ListView/RecyclerView 中正确使用 EditText CheckBox | Lazy Notes </title>
+  <title> Kotlin 快速入门 | Lazy Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/">
+    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/06/13/Kotlin-quick-start/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lazy">
@@ -283,7 +283,7 @@
             
             
               
-                ListView/RecyclerView 中正确使用 EditText CheckBox
+                Kotlin 快速入门
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T22:25:11+08:00">
-                2017-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T21:04:45+08:00">
+                2017-06-13
               </time>
             
 
@@ -317,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/17/Edit-CheckBox/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/04/17/Edit-CheckBox/" itemprop="commentCount">0</span> comments
+                <a href="/2017/06/13/Kotlin-quick-start/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/06/13/Kotlin-quick-start/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
 
           
           
-             <span id="/2017/04/17/Edit-CheckBox/" class="leancloud_visitors" data-flag-title="ListView/RecyclerView 中正确使用 EditText CheckBox">
+             <span id="/2017/06/13/Kotlin-quick-start/" class="leancloud_visitors" data-flag-title="Kotlin 快速入门">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,10 +355,45 @@
       
 
       
-        <p> 在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value<br><a id="more"></a> </p>
-<h2 id="错误用法"><a href="#错误用法" class="headerlink" title="错误用法"></a>错误用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setChecked(model.isChecked);</div><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);///改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="正确用法"><a href="#正确用法" class="headerlink" title="正确用法"></a>正确用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);//改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">checkBox.setChecked(model.isChecked);</div></pre></td></tr></table></figure>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p> 先设Item 监听器，Item复用时，监听器是new 的</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>人生苦多，快来 Kotlin ，十分钟快速学习Kotlin！</p>
+<a id="more"></a> 
+<h3 id="什么是Kotlin？"><a href="#什么是Kotlin？" class="headerlink" title="什么是Kotlin？"></a>什么是Kotlin？</h3><p>Kotlin 是种静态类型编程语言 用于现代多平台应用 100％可与Java™和Android™互操作,它是[JetBrains]开发的基于JVM的语言<br>开发IDE : <a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">Intellij</a> /[AndroidStudio3.0 preview] (<a href="https://developer.android.com/studio/preview/index.html" target="_blank" rel="external">https://developer.android.com/studio/preview/index.html</a>)<br><a href="https://kotlinlang.org/" target="_blank" rel="external">Kotlin 官网</a></p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="1-Numbers基本类型"><a href="#1-Numbers基本类型" class="headerlink" title="1.Numbers基本类型"></a>1.Numbers基本类型</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Bit width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Double</td>
+<td style="text-align:left">64</td>
+</tr>
+<tr>
+<td style="text-align:left">Float</td>
+<td style="text-align:left">32</td>
+</tr>
+<tr>
+<td style="text-align:left">Long</td>
+<td style="text-align:left">64</td>
+</tr>
+<tr>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">32</td>
+</tr>
+<tr>
+<td style="text-align:left">Short</td>
+<td style="text-align:left">16</td>
+</tr>
+<tr>
+<td style="text-align:left">Byte</td>
+<td style="text-align:left">8</td>
+</tr>
+</tbody>
+</table>
+<p>Kotlin 一切都是对象。Kotlin提供以上代表数字的内置类型（这很接近Java）<br>NOTE: <strong>Char</strong>  不是Kotlin的数字。如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">val c:Char=&apos;c&apos;</div><div class="line">val i: Int = c.toInt()</div><div class="line">println(c) // &apos;c&apos;</div><div class="line">println(i) // 99</div></pre></td></tr></table></figure></p>
+<h4 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h4><p>分别使用 <strong>var</strong>  ,<strong>val</strong>  声明可变和不可变的变量.例子如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">val s = &quot;Example&quot; // A Immutable String</div><div class="line">var v = &quot;Example&quot; // A Mutable String</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -395,18 +430,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/kvm-not-found/" rel="next" title="dev kvm is not found(Android studio)">
-                <i class="fa fa-chevron-left"></i> dev kvm is not found(Android studio)
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/16/hello-world/" rel="prev" title="Hello Hexo">
-                Hello Hexo <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/17/kvm-not-found/" rel="prev" title="dev kvm is not found(Android studio)">
+                dev kvm is not found(Android studio) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -536,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误用法"><span class="nav-number">1.</span> <span class="nav-text">错误用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确用法"><span class="nav-number">2.</span> <span class="nav-text">正确用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是Kotlin？"><span class="nav-number">2.</span> <span class="nav-text">什么是Kotlin？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">3.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Numbers基本类型"><span class="nav-number">3.1.</span> <span class="nav-text">1.Numbers基本类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-变量"><span class="nav-number">3.2.</span> <span class="nav-text">2.变量</span></a></li></ol></li></ol></div>
             
 
           </div>
