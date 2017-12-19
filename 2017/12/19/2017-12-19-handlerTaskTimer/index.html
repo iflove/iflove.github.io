@@ -73,7 +73,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="AndroidDevelop," />
 
 
 
@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
-<meta name="keywords">
+<meta name="description" content="今年在项目中发现为了实现倒计时、时间段的延迟执行、时间段的轮询执行任务，都是采用Handler postDelayed(runnable,delayMillis). 等等，这有毛病？那你将实现以上功能时、代码大概如下。">
+<meta name="keywords" content="AndroidDevelop">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta property="og:url" content="http://lazy.github.io/2017/04/17/Edit-CheckBox/index.html">
+<meta property="og:title" content="用 Handler 轻松实现专属Android定时器">
+<meta property="og:url" content="http://lazy.github.io/2017/12/19/2017-12-19-handlerTaskTimer/index.html">
 <meta property="og:site_name" content="Lazy Notes">
-<meta property="og:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
-<meta property="og:updated_time" content="2017-06-21T10:15:44.000Z">
+<meta property="og:description" content="今年在项目中发现为了实现倒计时、时间段的延迟执行、时间段的轮询执行任务，都是采用Handler postDelayed(runnable,delayMillis). 等等，这有毛病？那你将实现以上功能时、代码大概如下。">
+<meta property="og:updated_time" content="2017-12-19T15:28:02.732Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta name="twitter:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
+<meta name="twitter:title" content="用 Handler 轻松实现专属Android定时器">
+<meta name="twitter:description" content="今年在项目中发现为了实现倒计时、时间段的延迟执行、时间段的轮询执行任务，都是采用Handler postDelayed(runnable,delayMillis). 等等，这有毛病？那你将实现以上功能时、代码大概如下。">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/"/>
+  <link rel="canonical" href="http://lazy.github.io/2017/12/19/2017-12-19-handlerTaskTimer/"/>
 
 
 
 
 
-  <title> ListView/RecyclerView 中正确使用 EditText CheckBox | Lazy Notes </title>
+  <title> 用 Handler 轻松实现专属Android定时器 | Lazy Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/">
+    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/12/19/2017-12-19-handlerTaskTimer/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lazy">
@@ -283,7 +283,7 @@
             
             
               
-                ListView/RecyclerView 中正确使用 EditText CheckBox
+                用 Handler 轻松实现专属Android定时器
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T22:25:11+08:00">
-                2017-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-19T15:10:27+08:00">
+                2017-12-19
               </time>
             
 
@@ -317,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/17/Edit-CheckBox/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/04/17/Edit-CheckBox/" itemprop="commentCount">0</span> comments
+                <a href="/2017/12/19/2017-12-19-handlerTaskTimer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/12/19/2017-12-19-handlerTaskTimer/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
 
           
           
-             <span id="/2017/04/17/Edit-CheckBox/" class="leancloud_visitors" data-flag-title="ListView/RecyclerView 中正确使用 EditText CheckBox">
+             <span id="/2017/12/19/2017-12-19-handlerTaskTimer/" class="leancloud_visitors" data-flag-title="用 Handler 轻松实现专属Android定时器">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,10 +355,18 @@
       
 
       
-        <p> 在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value<br><a id="more"></a> </p>
-<h2 id="错误用法"><a href="#错误用法" class="headerlink" title="错误用法"></a>错误用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setChecked(model.isChecked);</div><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);///改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="正确用法"><a href="#正确用法" class="headerlink" title="正确用法"></a>正确用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);//改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">checkBox.setChecked(model.isChecked);</div></pre></td></tr></table></figure>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p> 先设Item 监听器，Item复用时，监听器是new 的</p>
+        <p>今年在项目中发现为了实现倒计时、时间段的延迟执行、时间段的轮询执行任务，都是采用Handler postDelayed(runnable,delayMillis). 等等，这有毛病？那你将实现以上功能时、代码大概如下。</p>
+<a id="more"></a> 
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">Handler handler = <span class="keyword">new</span> Handler()；</div><div class="line"><span class="keyword">int</span> countDown = <span class="number">30</span>;</div><div class="line">Runnable r = <span class="keyword">new</span> Runnable() &#123;</div><div class="line">        <span class="meta">@Override</span></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">            <span class="keyword">while</span> (countDown&gt;<span class="number">0</span>)&#123;</div><div class="line">                handler.postDelayed(r,<span class="number">1</span>);</div><div class="line">                countDown--;</div><div class="line">            &#125;</div><div class="line">        &#125;&#125;;</div><div class="line">handler.postDelayed(r,<span class="number">0</span>);</div></pre></td></tr></table></figure>
+<p>上面的代码还算好，如果是以 <code>handleMessage</code>、<code>sendEmptyMessageDelayed</code> 再通过<code>removeMessages</code>/<code>removeCallbacks</code> 去取消，这样的代码一大堆、追踪代码时，跳来跳去的。</p>
+<p>这时我就想到了RxJava 的好了，难道为了这要加入RxJava？</p>
+<p>所以， RxJava 好在哪？就好在简洁，好在那把什么复杂逻辑都只是一条链式调用。</p>
+<p>因此把上面代码封装一个 HandlerTaskTimer 工具类，大概伪编码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">HandlerTaskTimer</span></span>&#123;</div><div class="line">    <span class="comment">//成员变量</span></div><div class="line">  	Handler uiHandler;</div><div class="line"></div><div class="line">  	<span class="comment">//因为要链式调用,顺带采用构建者模式初始化必要参数</span></div><div class="line">  	<span class="function">Builder <span class="title">newBuilder</span><span class="params">()</span></span></div><div class="line">    class Builder&#123;</div><div class="line">      	<span class="comment">//一段时间后执行</span></div><div class="line">        period(<span class="keyword">long</span> period, TimeUnit unit)</div><div class="line">         <span class="comment">/**</span></div><div class="line">         * <span class="doctag">@param</span> period       一段时间后执行</div><div class="line">         * <span class="doctag">@param</span> initialDelay 首次延迟执行时间</div><div class="line">         * <span class="doctag">@param</span> unit</div><div class="line">         * <span class="doctag">@return</span></div><div class="line">         */</div><div class="line">        period(<span class="keyword">long</span> period, <span class="keyword">long</span> initialDelay, TimeUnit unit)</div><div class="line">        <span class="comment">//首次延迟执行时间</span></div><div class="line">        initialDelay(<span class="keyword">long</span> period, TimeUnit unit) </div><div class="line">        <span class="comment">//takeWhile 倒计时Count  </span></div><div class="line">        takeWhile(<span class="keyword">long</span> takeWhile)</div><div class="line">        <span class="comment">//tag</span></div><div class="line">        tag(String tag)</div><div class="line">        <span class="comment">//任务执行完成CallBack</span></div><div class="line">        accept(Action action)  </div><div class="line">        <span class="comment">//倒计时回调  </span></div><div class="line">        accept(Consumer&lt;Long&gt; longConsumer)  </div><div class="line">        accept(Consumer&lt;Long&gt; longConsumer, Action action)</div><div class="line">        </div><div class="line">        <span class="comment">//倒计时模式任务</span></div><div class="line">        countDown() </div><div class="line">        <span class="comment">//循环模式任务</span></div><div class="line">        loopExecute() </div><div class="line">        <span class="comment">//延迟模式任务</span></div><div class="line">        delayExecute() </div><div class="line">        <span class="comment">//启动任务</span></div><div class="line">        start()</div><div class="line">        <span class="comment">//取消任务</span></div><div class="line">        cancel()</div><div class="line">        <span class="comment">//恢复任务</span></div><div class="line">        resume()</div><div class="line">        <span class="comment">//暂停任务</span></div><div class="line">        pause()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>接下来就慢慢实现功能了，条条大路通罗马，也许你有更好的实现方式，以下是我本人的简单实现十分轻巧的定时任务器。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">HandlerTaskTimer.getInstance().newBuilder()</div><div class="line">               .tag(TAG_COUNTDOWN)</div><div class="line">               .period(<span class="number">1</span>, TimeUnit.SECONDS)</div><div class="line">               .takeWhile(LauncherActivity.DELAY_LAUNCH_DEFAULT)</div><div class="line">               .countDown()</div><div class="line">               .accept(<span class="keyword">new</span> Consumer&lt;Long&gt;() &#123;</div><div class="line">                   <span class="meta">@Override</span></div><div class="line">                   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(Long aLong)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">                       updateCancelLaunchButton(aLong);</div><div class="line">                   &#125;</div><div class="line">               &#125;, <span class="keyword">new</span> Action() &#123;</div><div class="line">                   <span class="meta">@Override</span></div><div class="line">                   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">                       performLaunchButtonClick();</div><div class="line">                   &#125;</div><div class="line">               &#125;).start();</div></pre></td></tr></table></figure>
+<p>哈哈，是不是好看多了！！代码不一一列出了，参照我👇 GitHub上的Demo 实现，还有Kotlin 的实现呢</p>
+<p><a href="https://github.com/iflove/AndroidDeveloperTools" target="_blank" rel="external"><strong>AndroidDeveloperTools</strong></a></p>
 
       
     </div>
@@ -386,6 +394,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/AndroidDevelop/" rel="tag"># AndroidDevelop</a>
+          
+        </div>
+      
 
       
         
@@ -395,15 +409,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/kvm-not-found/" rel="next" title="dev kvm is not found(Android studio)">
-                <i class="fa fa-chevron-left"></i> dev kvm is not found(Android studio)
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/12/16/Vps-Shadowsocks/" rel="prev" title="搬瓦工VPS -简单搭建ShadowsocksR">
+                搬瓦工VPS -简单搭建ShadowsocksR <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -450,17 +464,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -522,22 +527,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误用法"><span class="nav-number">1.</span> <span class="nav-text">错误用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确用法"><span class="nav-number">2.</span> <span class="nav-text">正确用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

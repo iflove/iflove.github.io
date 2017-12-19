@@ -73,7 +73,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="脚本工具," />
 
 
 
@@ -89,17 +89,17 @@
 
 
 
-<meta name="description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
-<meta name="keywords">
+<meta name="description" content="Linux、Mac下GBK与UTF8编码文件的批量转换脚本使用 iconv 进行批量转码 12345678910111213FILES=$(find . -type f -name &apos;*.java&apos;)for f in $FILESdo    if test -f $f; then        CHARSET=&quot;$( file --mime-encoding &quot;$f&quot;| awk -F &quot;: &quot; &apos;">
+<meta name="keywords" content="脚本工具">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta property="og:url" content="http://lazy.github.io/2017/04/17/Edit-CheckBox/index.html">
+<meta property="og:title" content="Linux、Mac下GBK与UTF8编码文件的批量转换">
+<meta property="og:url" content="http://lazy.github.io/2017/10/10/iconv-shell/index.html">
 <meta property="og:site_name" content="Lazy Notes">
-<meta property="og:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
-<meta property="og:updated_time" content="2017-06-21T10:15:44.000Z">
+<meta property="og:description" content="Linux、Mac下GBK与UTF8编码文件的批量转换脚本使用 iconv 进行批量转码 12345678910111213FILES=$(find . -type f -name &apos;*.java&apos;)for f in $FILESdo    if test -f $f; then        CHARSET=&quot;$( file --mime-encoding &quot;$f&quot;| awk -F &quot;: &quot; &apos;">
+<meta property="og:updated_time" content="2017-10-10T10:02:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ListView/RecyclerView 中正确使用 EditText CheckBox">
-<meta name="twitter:description" content="在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value">
+<meta name="twitter:title" content="Linux、Mac下GBK与UTF8编码文件的批量转换">
+<meta name="twitter:description" content="Linux、Mac下GBK与UTF8编码文件的批量转换脚本使用 iconv 进行批量转码 12345678910111213FILES=$(find . -type f -name &apos;*.java&apos;)for f in $FILESdo    if test -f $f; then        CHARSET=&quot;$( file --mime-encoding &quot;$f&quot;| awk -F &quot;: &quot; &apos;">
 
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/"/>
+  <link rel="canonical" href="http://lazy.github.io/2017/10/10/iconv-shell/"/>
 
 
 
 
 
-  <title> ListView/RecyclerView 中正确使用 EditText CheckBox | Lazy Notes </title>
+  <title> Linux、Mac下GBK与UTF8编码文件的批量转换 | Lazy Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +262,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/04/17/Edit-CheckBox/">
+    <link itemprop="mainEntityOfPage" href="http://lazy.github.io/2017/10/10/iconv-shell/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lazy">
@@ -283,7 +283,7 @@
             
             
               
-                ListView/RecyclerView 中正确使用 EditText CheckBox
+                Linux、Mac下GBK与UTF8编码文件的批量转换
               
             
           </h1>
@@ -298,8 +298,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T22:25:11+08:00">
-                2017-04-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T17:22:27+08:00">
+                2017-10-10
               </time>
             
 
@@ -317,8 +317,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/04/17/Edit-CheckBox/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/04/17/Edit-CheckBox/" itemprop="commentCount">0</span> comments
+                <a href="/2017/10/10/iconv-shell/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://lazy.github.io/2017/10/10/iconv-shell/" itemprop="commentCount">0</span> comments
                 </a>
               </span>
             
@@ -326,7 +326,7 @@
 
           
           
-             <span id="/2017/04/17/Edit-CheckBox/" class="leancloud_visitors" data-flag-title="ListView/RecyclerView 中正确使用 EditText CheckBox">
+             <span id="/2017/10/10/iconv-shell/" class="leancloud_visitors" data-flag-title="Linux、Mac下GBK与UTF8编码文件的批量转换">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -355,10 +355,10 @@
       
 
       
-        <p> 在 ListView/RecyclerView Item 中 使用EditText CheckBox 控件时 滚动列表时 EditText 值错乱 CheckBox checked 值同样错乱，原因在于复用Item时 设置控件value时 触发了old Item 监听器回调，回调中改变了控件value<br><a id="more"></a> </p>
-<h2 id="错误用法"><a href="#错误用法" class="headerlink" title="错误用法"></a>错误用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setChecked(model.isChecked);</div><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);///改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="正确用法"><a href="#正确用法" class="headerlink" title="正确用法"></a>正确用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() &#123;</div><div class="line">	@Override</div><div class="line">	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) &#123;</div><div class="line">		model.setChecked(isChecked);//改变 DataPoJo</div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line">checkBox.setChecked(model.isChecked);</div></pre></td></tr></table></figure>
-<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p> 先设Item 监听器，Item复用时，监听器是new 的</p>
+        <h1 id="Linux、Mac下GBK与UTF8编码文件的批量转换脚本"><a href="#Linux、Mac下GBK与UTF8编码文件的批量转换脚本" class="headerlink" title="Linux、Mac下GBK与UTF8编码文件的批量转换脚本"></a>Linux、Mac下GBK与UTF8编码文件的批量转换脚本</h1><p>使用 iconv 进行批量转码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">FILES=$(find . -type f -name <span class="string">'*.java'</span>)</div><div class="line"><span class="keyword">for</span> f <span class="keyword">in</span> <span class="variable">$FILES</span></div><div class="line"><span class="keyword">do</span></div><div class="line">    <span class="keyword">if</span> <span class="built_in">test</span> <span class="_">-f</span> <span class="variable">$f</span>; <span class="keyword">then</span></div><div class="line">        CHARSET=<span class="string">"<span class="variable">$( file --mime-encoding "$f"| awk -F ": " '&#123;print $2&#125;')</span>"</span></div><div class="line">        <span class="keyword">if</span> [ <span class="string">"<span class="variable">$CHARSET</span>"</span> != utf-8 ]; <span class="keyword">then</span></div><div class="line">            sh -c <span class="string">"iconv -f <span class="variable">$CHARSET</span> -t UTF-8 <span class="variable">$f</span> &gt; <span class="variable">$f</span>.temp"</span></div><div class="line">            mv <span class="_">-f</span> <span class="string">"<span class="variable">$f</span>.temp"</span> <span class="variable">$f</span></div><div class="line">        <span class="keyword">fi</span></div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="built_in">echo</span> <span class="_">-e</span> <span class="string">"\nSkipping <span class="variable">$f</span> - it's a regular file"</span>;</div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
+<p>终端运行</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh to.sh</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -386,6 +386,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/脚本工具/" rel="tag"># 脚本工具</a>
+          
+        </div>
+      
 
       
         
@@ -395,8 +401,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/17/kvm-not-found/" rel="next" title="dev kvm is not found(Android studio)">
-                <i class="fa fa-chevron-left"></i> dev kvm is not found(Android studio)
+              <a href="/2017/12/16/2017-12-16-toolsBox/" rel="next" title="My ToolsBox">
+                <i class="fa fa-chevron-left"></i> My ToolsBox
               </a>
             
           </div>
@@ -404,6 +410,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/13/Kotlin-quick-start/" rel="prev" title="Kotlin 快速入门">
+                Kotlin 快速入门 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -532,7 +542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#错误用法"><span class="nav-number">1.</span> <span class="nav-text">错误用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正确用法"><span class="nav-number">2.</span> <span class="nav-text">正确用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结论"><span class="nav-number">3.</span> <span class="nav-text">结论</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux、Mac下GBK与UTF8编码文件的批量转换脚本"><span class="nav-number">1.</span> <span class="nav-text">Linux、Mac下GBK与UTF8编码文件的批量转换脚本</span></a></li></ol></div>
             
 
           </div>
