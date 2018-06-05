@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://lazy.github.io/2017/08/23/git/git-note/index.html">
 <meta property="og:site_name" content="Lazy Notes">
 <meta property="og:description" content="git 常用命令备忘录">
-<meta property="og:updated_time" content="2018-01-15T15:04:51.477Z">
+<meta property="og:updated_time" content="2018-04-10T14:55:53.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My Git Note">
 <meta name="twitter:description" content="git 常用命令备忘录">
@@ -183,6 +183,8 @@
 <p><code>git remote add</code>命令用于添加远程主机。</p>
 <p><code>git remote rm</code>命令用于删除远程主机。</p>
 <p><code>git remote rename</code>命令用于远程主机的改名。</p>
+<h2 id="git-设置代理"><a href="#git-设置代理" class="headerlink" title="git 设置代理"></a>git 设置代理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy <span class="string">"localhost:1080"</span> </div><div class="line">git config --global --unset http.proxy</div></pre></td></tr></table></figure>
+<h1 id="SSL证书时，Git不能工作之解决办法"><a href="#SSL证书时，Git不能工作之解决办法" class="headerlink" title="SSL证书时，Git不能工作之解决办法"></a>SSL证书时，Git不能工作之解决办法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> GIT_SSL_NO_VERIFY=1  <span class="comment">#Linux</span></div><div class="line"><span class="built_in">set</span> GIT_SSL_NO_VERIFY 1 <span class="comment">#windows</span></div><div class="line">git config --global http.sslVerify <span class="literal">false</span></div></pre></td></tr></table></figure>
 
       
 
@@ -336,7 +338,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-提交时的用户和邮箱"><span class="toc-number">1.</span> <span class="toc-text">git 提交时的用户和邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash恢复"><span class="toc-number">2.</span> <span class="toc-text">git stash恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-remote"><span class="toc-number">3.</span> <span class="toc-text">git remote</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-提交时的用户和邮箱"><span class="toc-number">1.</span> <span class="toc-text">git 提交时的用户和邮箱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-stash恢复"><span class="toc-number">2.</span> <span class="toc-text">git stash恢复</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-remote"><span class="toc-number">3.</span> <span class="toc-text">git remote</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-设置代理"><span class="toc-number">4.</span> <span class="toc-text">git 设置代理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSL证书时，Git不能工作之解决办法"><span class="toc-number"></span> <span class="toc-text">SSL证书时，Git不能工作之解决办法</span></a>
                     </div>
                 </span>
             </div>
@@ -452,6 +454,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简历</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AndroidJUnit</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">AndroidDevelop</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">tools</a>
               </li>
              
@@ -460,23 +482,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">深入理解Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">AndroidStudio</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">“玩转”Java 系列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">AndroidJUnit</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -484,15 +490,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">AndroidDevelop</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">个人</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android&Java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,7 +514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android&Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">“玩转”Java 系列</a>
               </li>
              
               <li class="article-tag-list-item">
