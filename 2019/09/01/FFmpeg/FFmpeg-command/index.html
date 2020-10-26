@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Lazy Notes">
 <meta property="og:description" content="FFmpeg 常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T07:04:38.410Z">
+<meta property="og:updated_time" content="2020-05-31T08:00:25.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FFmpeg 常用命令">
 <meta name="twitter:description" content="FFmpeg 常用命令">
@@ -264,11 +264,21 @@
                 
               
 
-              <time title="创建时间：2019-09-01 00:00:00 / 修改时间：15:04:38" itemprop="dateCreated datePublished" datetime="2019-09-01T00:00:00+08:00">2019-09-01</time>
+              <time title="创建时间：2019-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-01T00:00:00+08:00">2019-09-01</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-05-31 16:00:25" itemprop="dateModified" datetime="2020-05-31T16:00:25+08:00">2020-05-31</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -301,14 +311,16 @@
         <p>FFmpeg 常用命令</p>
 <a id="more"></a> 
 
-<h1 id="Command-Examples"><a href="#Command-Examples" class="headerlink" title="Command Examples"></a>Command Examples</h1><h2 id="视频推流"><a href="#视频推流" class="headerlink" title="视频推流"></a>视频推流</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -re -i test.mkv -c copy -f flv rtmp://127.0.0.1/live</span><br></pre></td></tr></table></figure>
+<h1 id="Command-Examples"><a href="#Command-Examples" class="headerlink" title="Command Examples"></a>Command Examples</h1><h2 id="视频推流"><a href="#视频推流" class="headerlink" title="视频推流"></a>视频推流</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -re -i test.mkv -c copy -f flv rtmp://127.0.0.1/live</span><br><span class="line"></span><br><span class="line">ffmpeg -re -i rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov -rtsp_transport tcp -vcodec copy -codec copy -f rtsp rtsp://192.168.3.57/test</span><br></pre></td></tr></table></figure>
 
 <p><code>-re (*input*)</code> </p>
 <p>以本机帧速率读取输入。 主要用于模拟抓取设备或实时输入流（例如，从文件读取时）。 不应与实际的抓取设备或实时输入流一起使用（它可能导致数据包丢失）。 默认情况下，ffmpeg尝试尽可能快地读取输入。 此选项将减慢输入读取到输入的本机帧速率。 它对于实时输出（例如直播）很有用。</p>
 <p><code>-i</code>输入文件网址</p>
 <p><code>-c</code> [：stream_specifier]编解码器（输入/输出，每个流）</p>
 <p><code>-f</code> fmt（输入/输出） 强制输入或输出文件格式。通常会自动检测输入文件的格式，并从输出文件的文件扩展名中猜测，因此在大多数情况下不需要此选项。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks1  -vcodec copy -bsf:a aac_adtstoasc -acodec copy -f flv rtmp://...</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i rtmp://live.hkstv.hk.lxdns.com/live/hks1  -vcodec copy -bsf:a aac_adtstoasc -acodec copy -f flv rtmp://...</span><br><span class="line"></span><br><span class="line">ffmpeg -i rtsp://192.168.3.232/1 -rtsp_transport tcp -vcodec copy -codec copy -f rtsp rtsp://192.168.3.85</span><br><span class="line"></span><br><span class="line">-use_wallclock_as_timestamps 1</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -f concat -safe 0 -i mov.txt -c copy test.mp4</span><br></pre></td></tr></table></figure>
 
 
     </div>
@@ -326,8 +338,8 @@
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/09/01/FFmpeg/FFmpeg/" rel="next" title="FFmpeg 入门">
-                <i class="fa fa-chevron-left"></i> FFmpeg 入门
+              <a href="/2018/10/20/jenkins/jenkins_android/" rel="next" title="Jenkins上构建Android指南">
+                <i class="fa fa-chevron-left"></i> Jenkins上构建Android指南
               </a>
             
           </div>
@@ -335,6 +347,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+              <a href="/2019/09/01/server/nginx/" rel="prev" title="Nginx 基本的">
+                Nginx 基本的 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
     </footer>
@@ -389,7 +405,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -468,7 +484,11 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -547,7 +567,9 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -610,7 +632,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

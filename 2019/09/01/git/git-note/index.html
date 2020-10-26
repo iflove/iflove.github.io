@@ -67,7 +67,7 @@
 <meta property="og:site_name" content="Lazy Notes">
 <meta property="og:description" content="Git常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T06:59:41.887Z">
+<meta property="og:updated_time" content="2019-10-29T11:37:45.144Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git随笔记录">
 <meta name="twitter:description" content="Git常用命令">
@@ -264,11 +264,21 @@
                 
               
 
-              <time title="创建时间：2019-09-01 00:00:00 / 修改时间：14:59:41" itemprop="dateCreated datePublished" datetime="2019-09-01T00:00:00+08:00">2019-09-01</time>
+              <time title="创建时间：2019-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-09-01T00:00:00+08:00">2019-09-01</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-29 19:37:45" itemprop="dateModified" datetime="2019-10-29T19:37:45+08:00">2019-10-29</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -321,7 +331,7 @@
 <p><code>git remote add</code>命令用于添加远程主机。</p>
 <p><code>git remote rm</code>命令用于删除远程主机。</p>
 <p><code>git remote rename</code>命令用于远程主机的改名。</p>
-<h2 id="git-设置代理"><a href="#git-设置代理" class="headerlink" title="git 设置代理"></a>git 设置代理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.proxy <span class="string">"localhost:1080"</span> </span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br></pre></td></tr></table></figure>
+<h2 id="git-设置代理"><a href="#git-设置代理" class="headerlink" title="git 设置代理"></a>git 设置代理</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">查看代理</span><br><span class="line">git config --global http.proxy</span><br><span class="line">设置本地代理</span><br><span class="line">git config --global http.proxy <span class="string">"localhost:1080"</span> </span><br><span class="line">取消代理</span><br><span class="line">git config --global --<span class="built_in">unset</span> http.proxy</span><br></pre></td></tr></table></figure>
 
 <h2 id="SSL证书时-Git不能工作之解决办法"><a href="#SSL证书时-Git不能工作之解决办法" class="headerlink" title="SSL证书时, Git不能工作之解决办法"></a>SSL证书时, Git不能工作之解决办法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> GIT_SSL_NO_VERIFY=1  <span class="comment">#Linux</span></span><br><span class="line"><span class="built_in">set</span> GIT_SSL_NO_VERIFY 1 <span class="comment">#windows</span></span><br><span class="line">git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
@@ -346,6 +356,10 @@
 <p>Git不会在提交时进行检查</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git config --global core.safecrlf <span class="literal">false</span></span></span><br></pre></td></tr></table></figure>
 
+<p>svn 迁移到 git 的问题</p>
+<p>终端输入 <code>git svn …</code> 时 <code>Can&#39;t locate SVN/Core.pm in @INC (you may need to install the SVN::Core module)</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/SVN/ /Library/Perl/5.18/SVN </span><br><span class="line">sudo mkdir /Library/Perl/5.18/auto</span><br><span class="line">sudo ln -s /Applications/Xcode.app/Contents/Developer/Library/Perl/5.18/darwin-thread-multi-2level/auto/SVN/ /Library/Perl/5.18/auto/SVN</span><br></pre></td></tr></table></figure>
+
 
     </div>
 
@@ -362,8 +376,8 @@
         </div>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-              <a href="/2019/09/01/android/sign/keytool/" rel="next" title="keytool 使用">
-                <i class="fa fa-chevron-left"></i> keytool 使用
+              <a href="/2019/09/01/svn/svn/" rel="next" title="SVN基本命令">
+                <i class="fa fa-chevron-left"></i> SVN基本命令
               </a>
             
           </div>
@@ -371,8 +385,8 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-              <a href="/2019/09/01/c/base/" rel="prev" title="C语言入门">
-                C语言入门 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/01/FFmpeg/FFmpeg/" rel="prev" title="FFmpeg 入门">
+                FFmpeg 入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -429,7 +443,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">43</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -508,7 +522,11 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+          
+        
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -587,7 +605,9 @@
         
           
         
-        <span class="site-state-item-count">30</span>
+          
+        
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -650,7 +670,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
